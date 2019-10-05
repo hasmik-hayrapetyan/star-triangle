@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Star triangle</title>
+</head>
+<body>
+
+
+<script>
+    //#######################################################
+    // View in document.write
+    let a = '*';
+
+    //#######################################################
+    document.write(`<h2>Example first</h2>`);
+    for (let i = 0; i < 3; i++) {
+        document.write(`${a} &nbsp;&nbsp; <br />`);
+        for (let j = 0; j <= i + 1; j++) document.write(`${a} &nbsp;&nbsp;`);
+        for (let g = 0; g < i - 1; g++) {
+            document.write(`${a}`);
+        }
+    }
+
+    //#######################################################
+    document.write(`<h2>Example second</h2>`);
+    for (let i = 0; i <= 3; i++) {
+        document.write(`${a} &nbsp;&nbsp; <br />`);
+        for (let j = 0; j < i + 1; j++) document.write(`${a} &nbsp;&nbsp;`);
+        for (let g = 1; g < i - 1; g++) {
+            document.write(`${a}`);
+        }
+    }
+
+    //#######################################################
+    document.write(`<h2>Example third</h2>`);
+    for (let i = 0; i <= 6; i++) {
+        for (let f = 0; f < i - 1; f++) {
+            document.write(`${a} &nbsp;&nbsp;`);
+        }
+        document.write('<br />');
+    }
+
+    //#######################################################
+    document.write(`<h2>Example fourth</h2>`);
+    for (let i = 0; i <= 4; i++) {
+        document.write('<br />');
+        for (let g = 0; g < 5 - i; g++) {
+            document.write(`${a} &nbsp;&nbsp;`);
+        }
+    }
+
+    //#######################################################
+    document.write(`<h2>Example fifth</h2>`);
+    for (let i = 0; i < 6; i++) {
+        let s;
+        for (s = 0; s < 6 - i; s++) {
+            document.write(`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`);
+        }
+        for (s = 6 - i; s < 6; s++) {
+            document.write(`&nbsp;&nbsp;&nbsp;`);
+            document.write(`${a}`);
+        }
+        document.write('<br />');
+    }
+
+    //#######################################################
+    document.write(`<h2>Example sixth</h2>`);
+    for (let i = 0; i < 6; i++) {
+        let s;
+        for (s = 0; s < 6 - i; s++) {
+            document.write(`&nbsp;&nbsp;`);
+        }
+        for (s = 6 - i; s <= 5; s++) {
+            document.write(`&nbsp;&nbsp;`);
+            document.write(`${a}`);
+        }
+        document.write('<br />');
+    }
+
+</script>
+</body>
+</html>
