@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<body>
+   
+
+<script>
+
+//#######################################################
+// View in console.log
+function triangleStar(row = 0, triangle = '') {
+
+	// triangle bottomLeft and topLeft
+	if (triangle === "bottomLeft" || triangle === "topLeft") {
+		for (var i = 1; i <= row; i++) {
+			var star = '';
+			for (var j = 1; 
+				(triangle === "bottomLeft")? j <= i 
+				:j < row + 1 + 1 - i; j++) {
+				star += " * ";
+			}
+			console.log(star);
+		}
+	}
+
+	//triangle bottomRight and topRight
+	if (triangle === "bottomRight" || triangle === "topRight") {
+		for (var i = 1; i <= row; i++) {
+			var star = '';
+			var s;
+			for (s = 0;
+				(triangle === "bottomRight")? s < row-i 
+				:s < i;s++) {
+				star += "   ";
+			}
+			for (s = (triangle === "bottomRight")? row - i 
+				:0; (triangle === "bottomRight")? s < row: s < row + 1 - i; s++) {
+				star += " * ";
+			}
+			console.log(star);
+		}
+	}
+
+	//triangle
+	if (triangle === 'triangle') {
+		for (var i = 0; i <= row; i++) {
+			var b = "";
+			let s;
+			for (s = 0; s <= row - i; s++) {
+				b += "  ";
+			}
+			for (s = row - i; s < row; s++) {
+				b += "  * ";
+			}
+			console.log(b);
+		}
+	}
+	console.log("\n");
+}
+
+triangleStar(5, "bottomLeft");
+triangleStar(5, "bottomRight");
+triangleStar(5, "topLeft");
+triangleStar(5, "topRight");
+triangleStar(5, "triangle");
+
+
+
+
+
+//#######################################################
+// View in document.write
+var a = '*';
+
+//#######################################################
+document.write(`<h2>Example first</h2>`);
+for (var i = 0; i < 3; i++) {
+	document.write(`${a} &nbsp;&nbsp; <br />`);
+	for (var j = 0; j <= i + 1; j++) {
+		document.write(`${a} &nbsp;&nbsp;`);
+	}
+	for (var g = 0; g < i - 1; g++) {
+		document.write(`${a}`);
+	}
+}
+//#######################################################
+document.write(`<h2>Example second</h2>`);
+for (var i = 0; i <= 3; i++) {
+	document.write(`${a} &nbsp;&nbsp; <br />`);
+	for (var j = 0; j < i + 1; j++) {
+		document.write(`${a} &nbsp;&nbsp;`);
+	}
+	for (var g = 1; g < i - 1; g++) {
+		document.write(`${a}`);
+	}
+}
+//#######################################################
+document.write(`<h2>Example third</h2>`);
+var f;
+for (var i = 0; i <= 6; i++) {
+	for (f = 0; f < i - 1; f++) {
+		document.write(`${a} &nbsp;&nbsp;`);
+	}
+	document.write('<br />');
+}
+//#######################################################
+document.write(`<h2>Example fourth</h2>`);
+for (var i = 0; i <= 4; i++) {
+	document.write('<br />');
+	for (var g = 0; g < 5 - i; g++) {
+		document.write(`${a} &nbsp;&nbsp;`);
+	}
+}
+//#######################################################
+document.write(`<h2>Example fifth</h2>`);
+for (var i = 0; i < 6; i++) {
+	let s;
+	for (s = 0; s < 6 - i; s++) {
+		document.write(`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`);
+	}
+	for (s = 6 - i; s < 6; s++) {
+		document.write(`&nbsp;&nbsp;&nbsp;`);
+		document.write(`${a}`);
+	}
+	document.write('<br />');
+}
+
+//#######################################################
+document.write(`<h2>Example sixth</h2>`);
+for (var i = 0; i < 6; i++) {
+	let s;
+	for (s = 0; s < 6 - i; s++) {
+		document.write(`&nbsp;&nbsp;`);
+	}
+	for (s = 6 - i; s <= 5; s++) {
+		document.write(`&nbsp;&nbsp;`);
+		document.write(`${a}`);
+	}
+	document.write('<br />');
+}
+
+
+</script>
+</body>
+</html>
